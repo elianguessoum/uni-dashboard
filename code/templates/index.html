@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord Analytique</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"/>    
+</head>
+<body>
+
+    <div class="grid-container">
+        <header class="header">
+            <h1>Dashboard Analytique</h1>
+        </header>
+        <aside class="sidenav">      
+            <nav class="menu">
+                <a href="#reussitesexe">Réussites par Sexe (2019-2021)</a>
+                <a href="#etudiantannee">Nombre d'Étudiants par Année</a>
+                <a href="#etudiantspecialite">Évolution des Étudiants par Spécialité</a>
+                <a href="#reussiteannee">Réussites par Années</a>
+                <a href="#echecspecialite">Echecs par Spécialité </a>
+            </nav>     
+        </aside>
+        <main class="main">
+            <section class="card" id="reussitesexe">    
+                <div class="card-header">Réussites par Sexe (2019-2021)</div>
+                <canvas id="bar-chart-grouped" width="300" height="160"></canvas>
+            </section>
+            <section class="card"id="etudiantannee">    
+                <div class="card-header">Nombre d'Étudiants par Année</div>
+                <canvas id="bar-chart" height="500" width="700"></canvas>
+            </section>
+            <section class="card" id="etudiantspecialite">    
+                <div class="card-header">Évolution des Étudiants par Spécialité</div>
+                <canvas id="line-chart" height="500" width="700"></canvas>
+            </section>
+            <section class="card" id="reussiteannee">    
+                <div class="card-header">Réussites par Années</div>
+                <canvas id="pie-chart" height="500" width="700"></canvas>  
+            </section>
+            <section class="card" id="echecspecialite">    
+                <div class="card-header">Echec par Spécialité </div>
+                <canvas id="bar-chart-echec-specialite" height="500" width="700"></canvas>  
+            </section>
+        </main>
+    </div>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+</body>
+</html>

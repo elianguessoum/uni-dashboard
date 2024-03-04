@@ -1,0 +1,117 @@
+/* Réinitialisation de base pour assurer la cohérence entre les navigateurs */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* En-tête */
+.header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Barre de navigation latérale */
+.sidenav {
+    background-color: #444;
+    color: #fff;
+    padding: 1rem;
+    position: fixed;
+    height: 100%;
+}
+
+.sidenav a {
+    color: #ddd;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.sidenav a:hover {
+    background-color: #555;
+}
+
+/* Contenu principal */
+.main {
+    padding: 1rem;
+}
+
+.card {
+    background: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Pied de page */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Réactivité et mise en page en grille */
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    'header header'
+    'nav main'
+    'footer footer';
+    grid-template-columns: 20% 80%;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+.header {
+    grid-area: header;
+}
+
+.sidenav {
+    grid-area: nav;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'header'
+        'nav'
+        'main'
+        'footer';
+    }
+
+    .sidenav {
+        padding: 0.5rem;
+    }
+
+    .main {
+        padding: 0.5rem;
+    }
+}
